@@ -1,3 +1,54 @@
+const express = require('express');
+const app = express()
+const puppeteer = require('puppeteer');
+const path = require('path')
+const logger = require('morgan')
+
+if(process.env.NODE_ENV !== 'production'){
+  require('dotenv').config()
+}
+
+// Settings
+app.set('views', path.join(__dirname, 'views'))
+app.set('view engine', 'ejs')
+
+// Statics files
+app.use('/public', express.static(`${path.join(__dirname, 'public')}`))
+
+app.use(logger('dev'))
+
+app.get('/', (req, res) => {
+  res.render('index')
+})
+
+app.get('/pdf', async (req, res) => {
+  // const url = req.query.target
+  const browser = await puppeteer.launch({
+    headless: true
+  });
+  
+  const webPage = await browser.newPage();
+  const url = process.env.HOST;
+
+  await webPage.goto(url, {
+    waitUntil: "networkidle2"
+  });
+
+  await webPage.pdf({
+    printBackground: true,
+    path: "cv-Moura-Elias.pdf",
+    format: "A4",
+  });
+
+  await browser.close();
+})
+
+app.set('port', process.env.PORT || 4000)
+const port = app.get('port')
+app.listen(port, () => {
+  console.log(`Server listening on port ${port}`)
+})
+
 // const pdf = require('pdf-creator-node')
 // const fs = require('fs')
 
@@ -97,52 +148,3 @@
 
 //   await browser.close();
 // })
-
-const express = require('express');
-const app = express()
-const puppeteer = require('puppeteer');
-const path = require('path')
-const logger = require('morgan')
-
-if(process.env.NODE_ENV !== 'production'){
-  require('dotenv').config()
-}
-
-// Settings
-app.set('views', path.join(__dirname, 'views'))
-app.set('view engine', 'ejs')
-
-// Statics files
-app.use('/public', express.static(`${path.join(__dirname, 'public')}`))
-
-app.use(logger('dev'))
-
-app.get('/', (req, res) => {
-  res.render('index')
-})
-
-app.get('/pdf', async (req, res) => {
-  // const url = req.query.target
-  const browser = await puppeteer.launch({
-    headless: true
-  });
-  
-  const webPage = await browser.newPage();
-  const url = process.env.URL;
-
-  await webPage.goto(url, {
-    waitUntil: "networkidle2"
-  });
-
-  await webPage.pdf({
-    printBackground: true,
-    path: "cv-Moura-Elias.pdf",
-    format: "A4",
-  });
-
-  await browser.close();
-})
-
-app.listen(5000, () => {
-  console.log(`Server listening on port 5000`)
-})

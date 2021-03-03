@@ -35,12 +35,12 @@ header{
   background-color: rgb(29, 41, 57);
   color: white;
   /* border-radius: 5px 5px 0px 0px; */
-  height: 50mm; /*220px*/
+  height: 48mm; /*220px*/
   border-bottom: 0.01px solid rgba(17, 17, 17, 0.822);
 }
 
 .header-container{
-  height: 50mm; /*220px*/
+  height: 48mm; /*220px*/
   display: flex;
   /* flex-wrap: wrap; */
   align-items: center;
@@ -89,13 +89,13 @@ header h4 {
   flex-direction: column;
   flex-wrap: nowrap;
   width: 35%;
-  height:  246mm; /*920.5px*/
+  height:  248mm; /*920.5px*/
   /* border: 0.01px solid black; */
 }
 
 .right{
   width: 65%;
-  height:  246mm;
+  height:  248mm;
   /* border: 0.01px solid black; */
 }
 
