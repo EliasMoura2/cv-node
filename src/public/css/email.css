@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Exo 2', sans-serif;
+}
+
+h1 {
+  background-color: rgb(7, 7, 90);
+  color: rgb(221, 222, 236);
+  width: 70%;
+}
+
+p{
+  background-color: whitesmoke;
+  color: black;
+  width: 70%;
+}
