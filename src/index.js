@@ -29,7 +29,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/prueba', (req, res) => {
-  res.render('prueba')
+  res.render('node')
 })
 
 app.get('/pdf', async (req, res) => {
@@ -51,7 +51,7 @@ app.get('/pdf', async (req, res) => {
     format: "A4",
   });
 
-  //await browser.close();
+  await browser.close();
   res.redirect('/')
 })
 
@@ -74,7 +74,7 @@ app.post('/send-email', (req, res) => {
           `,
     attachments: [{
       filename: "CV-Moura-Elias-NodeJS-Junior.pdf",
-      path: `${path.join(__dirname, '/public/cv-Moura-Elias.pdf')}`,
+      path: `${path.join(__dirname, '/public/CV-Moura-Elias-NodeJS-Junior.pdf')}`,
       contentType: "application/pdf"
     }], function (err, info) {
       if(err){
