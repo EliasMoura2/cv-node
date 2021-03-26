@@ -47,7 +47,7 @@ app.get('/pdf', async (req, res) => {
 
   await webPage.pdf({
     printBackground: true,
-    path: `./src/public/pdf/${Date.now()}-CV-Moura-Elias-Node-Junior.pdf`,
+    path: `./src/public/pdf/${Date.now()}-CV-Moura-Elias-MERN-Junior.pdf`,
     format: "A4",
   });
 
