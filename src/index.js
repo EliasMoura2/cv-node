@@ -25,7 +25,7 @@ app.use(express.json())
 app.use('/public', express.static(`${path.join(__dirname, 'public')}`))
 
 app.get('/', (req, res) => {
-  res.render('mern')
+  res.render('node')
 })
 
 app.get('/prueba', (req, res) => {
