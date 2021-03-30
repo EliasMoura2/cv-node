@@ -25,11 +25,11 @@ app.use(express.json())
 app.use('/public', express.static(`${path.join(__dirname, 'public')}`))
 
 app.get('/', (req, res) => {
-  res.render('index')
+  res.render('mern')
 })
 
 app.get('/prueba', (req, res) => {
-  res.render('node')
+  res.render('mern')
 })
 
 app.get('/pdf', async (req, res) => {
