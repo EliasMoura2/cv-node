@@ -1,4 +1,5 @@
-const nodemailer = require("nodemailer")
+const nodemailer = require("nodemailer");
+require ('dotenv').config();
 // import * as sgTransport 'nodemailer-sendgrid-transport'
 
 const mailConfig = {
@@ -6,8 +7,8 @@ const mailConfig = {
   port:465,
   secure: true,
   auth: {
-    user: 'd.eliasmoura2@gmail.com',
-    pass: 'iqggisyqpedchiij'
+    user: process.env.USER_EMAIL,
+    pass: process.env.PASS_EMAIL
   }
 }
 
