@@ -13,7 +13,7 @@ require('./config/database')
 
 // Settings
 app.set('views', path.join(__dirname, 'views'))
-app.set('view engine', 'ejs')
+app.set('view engine', 'ejs');
 // // Static files
 // app.use(express.static(path.join(__dirname, "public")));
 
@@ -29,7 +29,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/prueba', (req, res) => {
-  res.render('mern')
+  res.render('imprimir')
 })
 
 app.get('/pdf', async (req, res) => {
@@ -47,7 +47,7 @@ app.get('/pdf', async (req, res) => {
 
   await webPage.pdf({
     printBackground: true,
-    path: `./src/public/pdf/${Date.now()}-CV-Moura-Elias-MERN-Junior.pdf`,
+    path: `./src/public/pdf/${Date.now()}-CV-Moura-Elias-MERN-Jr+.pdf`,
     format: "A4",
   });
 
