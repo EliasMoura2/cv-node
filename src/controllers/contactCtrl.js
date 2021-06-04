@@ -12,7 +12,7 @@ module.exports = {
       let mailOptions = {
         from: '<d.eliasmoura2@gmail.com>',
         to: email,
-        subject: 'CV Moura Elias Dev MERN Junior',
+        subject: 'CV Moura Elias Dev Jr + - Node.js',
         html: `<h1>Gracias por visitar mi CV online.</h1>
         <p>Mi nombre es Elias, hace aproximadamente un año y dos meses trabajo como desarrollador Backend JavaScript Jr, en el cual he ganado experiencia en el desarrollo de aplicaciones web y APIs REST, con Node.js, Express.js, JWT, Passwport.js, MySQL, Sequelize, mongoDB y mongoose.</p>
         <p>
@@ -30,8 +30,8 @@ module.exports = {
         <p>Damian Elias Moura.</p>
               `,
         attachments: [{
-          filename: "CV-Moura-Elias-MERN-Junior.pdf",
-          path: `${path.join(__dirname, '../public/CV-Moura-Elias-MERN-Junior.pdf')}`,
+          filename: "CV-Moura-Elias-Node-Jr+.pdf",
+          path: `${path.join(__dirname, '../public/CV-Moura-Elias-Node-Jr+.pdf')}`,
           contentType: "application/pdf"
         }], function (err, info) {
           if(err){
